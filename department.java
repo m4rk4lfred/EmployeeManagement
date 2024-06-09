@@ -149,7 +149,27 @@ public class department extends Employeemanagement implements departmentManegeme
 
     @Override
     public void removeEmployeeFromDepartment() {
-  
+        System.out.println("REMOVE EMPLOYEE FROM DEPARTMENT\n\n");
+        scan.nextLine();
+
+        System.out.println("Enter Employee Name: ");
+        String employeeName = scan.nextLine();
+
+        for(int department = 0 ; department < assignedDepartment.length-1 ; department++){
+            for(int employee = 0 ; employee < assignedDepartment[department].length ; employee++){
+                if(assignedDepartment[department][employee] != null && assignedDepartment[department][employee].equals(employeeName)){
+                    assignedDepartment[department][employee] = null;
+                    
+                }
+                 if(assignedDepartment[department][employee] == null){
+                     assignedDepartment[department][employee] = assignedDepartment[department + 1][employee];
+                     assignedDepartment[department + 1][employee] = null;
+                     
+                 }
+            } 
+        }
+        waitForAnyKey();
+        StartMainMenu();
     }
 
     @Override
@@ -160,9 +180,14 @@ public class department extends Employeemanagement implements departmentManegeme
          for(int i = 0 ; i < counterDepartment ; i++){
             System.out.println("Department: "+departmentList[i]);
             for(int j = 0 ; j < assignedDepartment.length ; j++){
-                    
-                    if(assignedDepartment[j][1] != null && departmentList[i].equals(assignedDepartment[j][1])){
-                        System.out.println((j+1)+". "+assignedDepartment[j][0]);
+                    int counter = 0;
+                    if(assignedDepartment[j][counter] != null && departmentList[i].equals(assignedDepartment[j][1])){
+                        System.out.println((j+1)+". "+assignedDepartment[j][counter]);
+                        counter++;
+                    }
+
+                    if(counter == 2){
+                        counter = 0;
                     }
                 
             }
