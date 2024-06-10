@@ -2,7 +2,10 @@ package EmployeeManagementSystem;
 
 import java.io.Console;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Mainmenu {
    
@@ -31,6 +34,7 @@ public class Mainmenu {
     }
 
     private void functionalityhomeMenu(){
+        try{
         System.out.println("Enter your choice: ");
         userChoice = scan.nextInt();
         switch(userChoice){
@@ -52,6 +56,10 @@ public class Mainmenu {
                 System.exit(0);
                 break;
         }
+    }
+    catch(InputMismatchException e){
+        errorHandle();
+    }
     }
     public interface employeeManagement {
       public void AddEmployee();
@@ -112,7 +120,11 @@ public class Mainmenu {
     public int getCounterEmployee(){
         return counterEmployee;
     }
-
+    public void errorHandle(){
+       
+        JOptionPane.showMessageDialog(null, "Error : Enter integer from 1 to 4", "Invalid input", JOptionPane.ERROR_MESSAGE);
+        StartMainMenu();
+    }
 
 
 }

@@ -23,6 +23,7 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
 
     @Override
     public void AddEmployee() {
+       
        clearScreen();
        scan.nextLine();
        while(running){
@@ -53,7 +54,9 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
           running = true;
        }
        else{
-        System.err.println("Invalid Input");
+        JOptionPane.showMessageDialog(null, "ERROR: Invalid Input", "ERROR", JOptionPane.ERROR_MESSAGE);
+        clearScreen();
+        continue;
     }
 }
 }
@@ -154,6 +157,7 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
         StartMainMenu(); 
     }
     public void displayEmployeeMenu(){
+       
         clearScreen();
         System.out.println("Employee Management\n");
         System.out.println("1. Add Employee");
