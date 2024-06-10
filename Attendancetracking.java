@@ -125,7 +125,18 @@ public class Attendancetracking extends Employeemanagement implements attendance
    }
 
    public void viewAttendanceByEmployee(){
-
+            clearScreen();
+            scan.nextLine();
+            System.out.println("View Attendance by Employee\n");
+            System.out.println("Enter Employee Name: ");
+            String name = scan.nextLine();
+            for(int i = 0 ; i < markedAttendance.length ; i++){
+                if(markedAttendance[i][0] != null && markedAttendance[i][0].toLowerCase().equals(name.toLowerCase())){
+                    System.out.println("Employee: " + markedAttendance[i][0] + " Date: " + markedAttendance[i][1] + " Attendance: " + markedAttendance[i][2]);
+                }
+            }
+            waitForAnyKey();
+            StartMainMenu();
    }
 
    
