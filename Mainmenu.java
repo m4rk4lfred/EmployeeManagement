@@ -45,6 +45,8 @@ public class Mainmenu {
                 departmentManagement.showDepartmentMenu();
                 break;
             case 3:
+                Attendancetracking Attendancetracking = new Attendancetracking(scan);
+                Attendancetracking.showAttendanceMenu();
                 break;
             case 4:
                 System.exit(0);
@@ -64,6 +66,12 @@ public class Mainmenu {
         public void assignEmplyoeeToDepartment();
         public void removeEmployeeFromDepartment();
         public void listDepartment();
+    }
+
+    public interface attendanceTracking{
+        public void markAttendance();
+        public void showAttendanceByData();
+        public void viewAttendanceByEmployee();
     }
     public void clearScreen(){
         System.out.print("\033[H\033[2J");
