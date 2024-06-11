@@ -29,7 +29,8 @@ public class department extends Employeemanagement implements departmentManegeme
 
      public void showDepartmentMenu(){
             clearScreen();
-            System.out.println("Department Management\n");
+            center("DEPARTMENT MANAGEMENT");
+            System.out.println("\n");
             System.out.println("1. Add Department");
             System.out.println("2. Assign Employee to Department");
             System.out.println("3. Remove from Department");
@@ -69,7 +70,7 @@ public class department extends Employeemanagement implements departmentManegeme
      }
     @Override
     public void addDepartment() {
-         System.out.println("added");
+        center("ADD DEPARTMENT");
          scan.nextLine();
          while(departmentRunning){
             System.out.println("Enter Department Name: ");
@@ -101,7 +102,8 @@ public class department extends Employeemanagement implements departmentManegeme
     @Override
     public void assignEmplyoeeToDepartment() {
         clearScreen();
-        System.out.println("ASSIGN EMPLOYEE TO DEPARTMENT\n\n");
+        center("ASSIGN EMPLOYEE TO THE DEPARTMENT");
+        System.out.println("\n\n");
         scan.nextLine();
         assign = true;
         while(assign){
@@ -149,7 +151,8 @@ public class department extends Employeemanagement implements departmentManegeme
 
     @Override
     public void removeEmployeeFromDepartment() {
-        System.out.println("REMOVE EMPLOYEE FROM DEPARTMENT\n\n");
+        center("REMOVE EMPLOYEE FROM THE DEPARTMENT");
+        System.out.println("\n\n");
         scan.nextLine();
 
         System.out.println("Enter Employee Name: ");
@@ -175,7 +178,8 @@ public class department extends Employeemanagement implements departmentManegeme
     @Override
     public void listDepartment() {
         clearScreen();
-        System.out.println("LIST OF DEPARTMENTS\n\n");
+        center("LIST OF DEPARTMENTS");
+        System.out.println("\n\n");
         
          for(int i = 0 ; i < counterDepartment ; i++){
             System.out.println("Department: "+departmentList[i]);

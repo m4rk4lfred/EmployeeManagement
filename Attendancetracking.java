@@ -55,7 +55,8 @@ public class Attendancetracking extends Employeemanagement implements attendance
    public void markAttendance(){
          clearScreen();
          scan.nextLine();
-         System.out.println("Mark Attendance\n");
+         center("MARK ATTENDANCE");
+         System.out.println("\n");
          System.out.print("Enter date (YYYY-MM-DD): ");
          String date = scan.nextLine();
          System.out.print("Enter Employee Name: ");
@@ -105,7 +106,8 @@ public class Attendancetracking extends Employeemanagement implements attendance
    public void showAttendanceByDate(){
            clearScreen();
            scan.nextLine();
-           System.out.println("View Attendance by Date\n");
+           center("VIEW ATTENDANCE BY DATE");
+           System.out.println("\n");
            System.out.println("Enter Date (YYYY-MM-DD): ");
            String dates = scan.nextLine();
 
@@ -127,7 +129,8 @@ public class Attendancetracking extends Employeemanagement implements attendance
    public void viewAttendanceByEmployee(){
             clearScreen();
             scan.nextLine();
-            System.out.println("View Attendance by Employee\n");
+            center("VIEW ATTENDANCE BY EMPLOYEE");
+            System.out.println("\n");
             System.out.println("Enter Employee Name: ");
             String name = scan.nextLine();
             for(int i = 0 ; i < markedAttendance.length ; i++){

@@ -27,8 +27,8 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
        clearScreen();
        scan.nextLine();
        while(running){
-       
-       System.out.print("Add Employee\n\n");
+       center("ADD EMPLOYEE");
+       System.out.print("\n\n");
        
        if(employeeNames[counterEmployee] == null){
        System.out.print("Enter Employee Name: ");
@@ -66,7 +66,8 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
     @Override
     public void ShowEmployee() {
         clearScreen();
-        System.out.println("LIST OF EMPLOYEES\n\n");
+        center("LIST OF EMPLOYEES");
+        System.out.println("\n\n");
         for(int i = 0; i < counterEmployee; i++){
             if(employeeNames[i] != null){
             System.out.println(i+1 +".\nEmployee Name: " + employeeNames[i]);
@@ -149,7 +150,8 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
     @Override
     public void listAllEmployee() {
         clearScreen();
-        System.out.println("LIST OF ALL EMPLOYEES\n");
+        center("LIST OF ALL EMPLOYEES");
+        System.out.println("\n");
         for(int i = 0 ; i < counterEmployee; i++){
             System.out.println(i+1 + ". " + employeeNames[i]);
         }
@@ -159,7 +161,8 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
     public void displayEmployeeMenu(){
        
         clearScreen();
-        System.out.println("Employee Management\n");
+        center("MAIN MENU");
+        System.out.println("\n");
         System.out.println("1. Add Employee");
         System.out.println("2. Show Employee");
         System.out.println("3. Remove Employee");

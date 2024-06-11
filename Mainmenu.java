@@ -24,7 +24,7 @@ public class Mainmenu {
     }
     private void displayMenu(){
         
-        System.out.println("Main Menu\n");
+        center("EMPLOYEE MANAGEMENT SYSTEM");
         System.out.println("1. Employee Management");
         System.out.println("2. Department Management");
         System.out.println("3. Attendance Management");
@@ -125,6 +125,13 @@ public class Mainmenu {
         JOptionPane.showMessageDialog(null, "Error : Enter integer from 1 to 4", "Invalid input", JOptionPane.ERROR_MESSAGE);
         StartMainMenu();
     }
-
+    
+    public void center(String text){
+          int terminalLength = 130;
+          int padding = (terminalLength - text.length())/2;
+          
+          String applyPadding = " ".repeat(Math.max(0, padding));
+          System.out.println(applyPadding + text);
+    }
 
 }
