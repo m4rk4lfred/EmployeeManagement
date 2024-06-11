@@ -96,7 +96,7 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
        String name = scan.nextLine();
 
        for(int i = 0 ; i < counterEmployee; i++){
-          if(name.replaceAll("\s", "").toLowerCase().equals(employeeNames[i].replaceAll("\s", "").toLowerCase())){
+          if(name.replaceAll("\s+", "").toLowerCase().equals(employeeNames[i].replaceAll("\s", "").toLowerCase())){
                 employeeNames[i] = null;
                 employeeAddress[i] = null;
                 employeePhoneNumber[i] = null;
