@@ -25,11 +25,11 @@ public class Attendancetracking extends Employeemanagement implements attendance
 
    public void showAttendanceMenu(){
          clearScreen();
-         System.out.println("Attendance Tracker\n");
-         System.out.println("1. Mark Attendance");
+         center("ATTENDANCE TRACKER");
+         System.out.println(ANSI_YELLOW+"1. Mark Attendance");
          System.out.println("2. View Attendance by date");
          System.out.println("3. View attendance by employee");
-         System.out.println("4. Back to Main Menu");
+         System.out.println("4. Back to Main Menu"+ANSI_RESET);
          functionalityAttendance();
    }
 

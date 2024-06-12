@@ -11,7 +11,12 @@ public class Mainmenu {
    
     Scanner scan = new Scanner(System.in);
     int userChoice;
+    public static String AnsiRed = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
     private static int counterEmployee ;
+    public static int welcome = 0;
    
     
     Mainmenu() {
@@ -23,12 +28,21 @@ public class Mainmenu {
         functionalityhomeMenu();
     }
     private void displayMenu(){
-        
-        center("EMPLOYEE MANAGEMENT SYSTEM");
-        System.out.println("1. Employee Management");
+        if(welcome == 0){
+        delay delay = new delay("WELCOME TO THE EMPLOYEE MANAGEMENT SYSTEM");;
+        delay.start();
+        try {
+            delay.join();
+        } catch (InterruptedException e) {
+            System.err.println(AnsiRed+"Thread interrupted"+ANSI_RESET);
+        }
+        welcome++;
+    }
+        center("\n\nEMPLOYEE MANAGEMENT SYSTEM");
+        System.out.println(ANSI_YELLOW+"1. Employee Management");
         System.out.println("2. Department Management");
         System.out.println("3. Attendance Management");
-        System.out.println("4. Exit");
+        System.out.println("4. Exit"+ANSI_RESET);
         
         
     }
@@ -126,12 +140,13 @@ public class Mainmenu {
         StartMainMenu();
     }
     
-    public void center(String text){
+    public String center(String text){
           int terminalLength = 130;
           int padding = (terminalLength - text.length())/2;
           
           String applyPadding = " ".repeat(Math.max(0, padding));
-          System.out.println(applyPadding + text);
+          System.out.println(applyPadding +AnsiRed +text + ANSI_RESET);
+          return applyPadding + text;
     }
 
 }

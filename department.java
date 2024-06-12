@@ -31,11 +31,11 @@ public class department extends Employeemanagement implements departmentManegeme
             clearScreen();
             center("DEPARTMENT MANAGEMENT");
             System.out.println("\n");
-            System.out.println("1. Add Department");
+            System.out.println(ANSI_YELLOW+"1. Add Department");
             System.out.println("2. Assign Employee to Department");
             System.out.println("3. Remove from Department");
             System.out.println("4. List all Department");
-            System.out.println("5. Back to Main Menu");
+            System.out.println("5. Back to Main Menu" + ANSI_RESET);
             System.out.println("Enter your choice: ");
             if(scan.hasNextInt()){
             userChoice = scan.nextInt();
@@ -92,7 +92,7 @@ public class department extends Employeemanagement implements departmentManegeme
                 continue;
             }
             else{
-                System.err.println("Invalid Input");
+                System.err.println(AnsiRed+"Invalid Input"+ANSI_RESET);
             }
          } 
          StartMainMenu();
@@ -126,11 +126,10 @@ public class department extends Employeemanagement implements departmentManegeme
                     System.out.println("Employee assigned: " + assignedDepartment[assignmentCount][0]);
                     employeeAssigned = true;
                 }
-        
                 if(departmentAssigned && employeeAssigned){
                     System.out.println("Assignment complete for " + employeeName + " to " + departmentName);
                     assignmentCount++;
-                    System.out.println("press y to back");
+                    System.out.println(AnsiRed+"press y to back"+ ANSI_RESET);
                     String users = scan.nextLine();
                     if(users.equals("y")){
                         assign = false;
@@ -140,7 +139,7 @@ public class department extends Employeemanagement implements departmentManegeme
             }
         
             if(!departmentAssigned || !employeeAssigned){
-                System.out.println("Could not find a match for either the department or the employee.");
+                System.out.println(AnsiRed+"Could not find a match for either the department or the employee." + ANSI_RESET);
             }
         
         
@@ -186,7 +185,7 @@ public class department extends Employeemanagement implements departmentManegeme
             for(int j = 0 ; j < assignedDepartment.length ; j++){
                     int counter = 0;
                     if(assignedDepartment[j][counter] != null && departmentList[i].equals(assignedDepartment[j][1])){
-                        System.out.println((j+1)+". "+assignedDepartment[j][counter]);
+                        System.out.println(ANSI_BLUE+(j+1)+". "+assignedDepartment[j][counter] + ANSI_RESET);
                         counter++;
                     }
 

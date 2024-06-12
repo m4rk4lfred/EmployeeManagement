@@ -161,13 +161,11 @@ public class Employeemanagement extends Mainmenu implements employeeManagement{
     public void displayEmployeeMenu(){
        
         clearScreen();
-        center("MAIN MENU");
-        System.out.println("\n");
-        System.out.println("1. Add Employee");
+        System.out.println(ANSI_YELLOW +"1. Add Employee" );
         System.out.println("2. Show Employee");
         System.out.println("3. Remove Employee");
         System.out.println("4. List All Employee");
-        System.out.println("5. Back to Main Menu");
+        System.out.println("5. Back to Main Menu"+ANSI_RESET);
         System.out.println("Enter your choice: ");
         if(scan.hasNextInt()){
         userChoice = scan.nextInt();
